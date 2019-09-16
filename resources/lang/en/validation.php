@@ -129,10 +129,24 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'nama' => [
+            'required' => 'kami membutuhkan nama anda',
+        ],
+        'npm' => [
+            'required' => 'kami membutuhkan npm anda',
+        ],
+        'email' => [
+            'required' => 'kami membutuhkan email anda',
+        ],
+        'jurusan' => [
+            'required' => 'kami membutuhkan jurusan anda',
         ],
     ],
+    // 'custom' => [
+    //     'attribute-name' => [
+    //         'rule-name' => 'custom-message',
+    //     ],
+    // ],
 
     /*
     |--------------------------------------------------------------------------

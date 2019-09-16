@@ -29,7 +29,7 @@ class StudentsController extends Controller
      */
     public function create()
     {
-        //
+        return view('students.create');
     }
 
     /**
@@ -40,7 +40,37 @@ class StudentsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $student = new Student;
+        // $student->nama = $request->nama;
+        // $student->npm = $request->npm;
+        // $student->email = $request->email;
+        // $student->jurusan = $request->jurusan;
+
+        // $student->save();
+
+        // Student::create([
+        //     'nama'=> $request->nama,
+        //     'npm'=> $request->npm,
+        //     'email'=> $request->email,
+        //     'jurusan'=> $request->jurusan,
+        // ]);
+
+        $request->validate([
+            'nama'=>'required',
+            'npm' => 'required|size:8',
+            'email' => 'required',
+            'jurusan' => 'required',
+        ]);
+
+        Student::create($request->all());
+        return redirect('/students')->with('status', 'Data Mahasiswa Berhasi di Tambahkan!');;
+    }
+    public function messages()
+    {
+        return [
+            'nama.required' => 'Form nama harus di isi',
+            'email.required'  => 'Form email harus di isi',
+        ];
     }
 
     /**
