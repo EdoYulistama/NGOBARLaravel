@@ -14,9 +14,13 @@
                 <p class="card-text">{{$students->email}}</p>
                 <p class="card-text">{{$students->jurusan}}</p>
                     
-                    <button type="submit" class="btn btn-primary">Edit</button>
+                    <a href="{{url('/students/'.$students->id.'/edit')}}" class="btn btn-primary">Edit</a>
+
+                <form action="{{url('/students/'.$students->id)}}" method="post" class="d-inline">
+                  @method('delete')
+                  @csrf
                     <button type="submit" class="btn btn-danger">Delete</button>
-                  
+                </form>
                 <a href="{{url('/students')}}" class="card-link">Kembali</a>
                 </div>
               </div>

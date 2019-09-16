@@ -134,6 +134,7 @@ return [
         ],
         'npm' => [
             'required' => 'kami membutuhkan npm anda',
+            'size' => 'form harus :size karakter',
         ],
         'email' => [
             'required' => 'kami membutuhkan email anda',
